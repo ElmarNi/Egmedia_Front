@@ -1,0 +1,239 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+header {
+  padding: 10px 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+header .logo img {
+  height: 40px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+header .menu-bar {
+  position: relative;
+  height: 22px;
+  cursor: pointer;
+  width: 36px;
+  margin-left: auto;
+}
+header .menu-bar span {
+  position: absolute;
+  width: 36px;
+  height: 2px;
+  background-color: black;
+  right: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+header .menu-bar span:first-child {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+header .menu-bar span:nth-child(2) {
+  top: 10px;
+  height: 1.5px;
+}
+header .menu-bar span:last-child {
+  top: 20px;
+}
+header nav.menu {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  background-color: #a53692;
+  top: 60px;
+}
+header nav.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header nav.menu ul li {
+  margin-bottom: 30px;
+  -webkit-transition: opacity .8s,-webkit-transform 1s;
+  transition: opacity .8s,-webkit-transform 1s;
+  transition: transform 1s,opacity .8s;
+  transition: transform 1s,opacity .8s,-webkit-transform 1s;
+}
+header nav.menu ul li a {
+  background: #fff;
+  display: block;
+  padding: 100px 40px 30px;
+  width: 302px;
+  height: 234px;
+  text-decoration: none;
+  position: relative;
+}
+header nav.menu ul li a .name {
+  font-size: 40px;
+  color: #2d0c4e;
+  display: block;
+}
+header nav.menu ul li a .nav-desc {
+  color: #2d0c4e;
+  display: block;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 24px;
+  color: #2d0c4e;
+}
+header nav.menu ul li a .nav-desc:before {
+  background: url(../../img/right-arrow.png) no-repeat;
+  width: 31px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+}
+header nav.menu ul li a .nav-line {
+  position: absolute;
+  background-color: #f5874f;
+}
+header nav.menu ul li a .nav-line-1, header nav.menu ul li a .nav-line-3 {
+  height: 15px;
+  width: 0;
+  right: 0;
+  -webkit-transition: width .175s linear;
+  transition: width .175s linear;
+}
+header nav.menu ul li a .nav-line-2, header nav.menu ul li a .nav-line-4 {
+  height: 0;
+  width: 15px;
+  bottom: 0;
+  -webkit-transition: height .175s linear;
+  transition: height .175s linear;
+}
+header nav.menu ul li a .nav-line-1, header nav.menu ul li a .nav-line-4 {
+  -webkit-transition-delay: .175s;
+          transition-delay: .175s;
+}
+header nav.menu ul li a .nav-line-3, header nav.menu ul li a .nav-line-2 {
+  -webkit-transition-delay: .35s;
+          transition-delay: .35s;
+}
+header nav.menu ul li a .nav-line-1 {
+  top: 0;
+}
+header nav.menu ul li a .nav-line-3 {
+  bottom: 0;
+}
+header nav.menu ul li a .nav-line-2 {
+  right: 0;
+}
+header nav.menu ul li a .nav-line-4 {
+  left: 0;
+}
+header nav.menu ul li a:hover .nav-line-1, header nav.menu ul li a:hover .nav-line-4 {
+  -webkit-transition-delay: .35s;
+          transition-delay: .35s;
+}
+header nav.menu ul li a:hover .nav-line-1, header nav.menu ul li a:hover .nav-line-3 {
+  width: 100%;
+}
+header nav.menu ul li a:hover .nav-line-2, header nav.menu ul li a:hover .nav-line-3 {
+  -webkit-transition-delay: .175s;
+          transition-delay: .175s;
+}
+header nav.menu ul li a:hover .nav-line-2, header nav.menu ul li a:hover .nav-line-4 {
+  height: 100%;
+}
+header nav.menu ul li.top-left {
+  float: left;
+  -webkit-transform: translateY(-50vh);
+          transform: translateY(-50vh);
+}
+header nav.menu ul li.bottom-left {
+  float: left;
+  clear: left;
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
+  margin: 0;
+}
+header nav.menu ul li.bottom-left a {
+  padding: 160px 40px 30px;
+  height: 294px;
+}
+header nav.menu ul li.top-right {
+  float: right;
+  -webkit-transform: translateY(-70vh);
+          transform: translateY(-70vh);
+}
+header nav.menu ul li.top-right a {
+  padding: 160px 40px 30px;
+  height: 294px;
+}
+header nav.menu ul li.bottom-right {
+  float: right;
+  clear: right;
+  -webkit-transform: translateX(50vw);
+          transform: translateX(50vw);
+  margin: 0;
+}
+header nav.menu ul li.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 60vh) rotate(-90deg);
+          transform: translate(-50%, 60vh) rotate(-90deg);
+}
+header nav.menu ul li.clear {
+  clear: both;
+}
+header nav.menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+header.active {
+  background-color: #a53692;
+}
+header.active .logo img {
+  -webkit-filter: brightness(0%) invert(1);
+          filter: brightness(0%) invert(1);
+}
+header.active ul li {
+  -webkit-transform: translate3d(0, 0, 0) !important;
+          transform: translate3d(0, 0, 0) !important;
+}
+header.active ul li.center {
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg) !important;
+          transform: translate(-50%, -50%) rotate(-90deg) !important;
+}
+header.active .menu-bar span {
+  background-color: white;
+}
+header.active .menu-bar span:nth-child(2) {
+  -webkit-transition: -webkit-transform .25s .15s ease-in;
+  transition: -webkit-transform .25s .15s ease-in;
+  transition: transform .25s .15s ease-in;
+  transition: transform .25s .15s ease-in, -webkit-transform .25s .15s ease-in;
+  -webkit-transform: rotate3d(0, 0, 1, 135deg);
+          transform: rotate3d(0, 0, 1, 135deg);
+}
+header.active .menu-bar span:first-child, header.active .menu-bar span:last-child {
+  -webkit-transition: top .15s ease-in,-webkit-transform .25s .15s ease-in;
+  transition: top .15s ease-in,-webkit-transform .25s .15s ease-in;
+  transition: top .15s ease-in,transform .25s .15s ease-in;
+  transition: top .15s ease-in,transform .25s .15s ease-in,-webkit-transform .25s .15s ease-in;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+          transform: rotate3d(0, 0, 1, 45deg);
+  top: 10px;
+  height: 1.5px;
+}
+
+@media (min-width: 992px) {
+  nav.menu .container {
+    max-width: 920px;
+  }
+}

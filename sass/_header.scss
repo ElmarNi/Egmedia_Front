@@ -1,0 +1,218 @@
+header{
+    padding: 10px 0;
+    transition: all .5s ease;
+    .logo{
+        img{
+            height: 40px;
+            transition: all .5s ease;
+        }
+    }
+    .menu-bar{
+        position: relative;
+        height: 22px;
+        cursor: pointer;
+        width: 36px;
+        margin-left: auto;
+        span{
+            position: absolute;
+            width: 36px;
+            height: 2px;
+            background-color: black;
+            right: 0;
+            transition: all .5s ease;
+            &:first-child{
+                transition-delay: .1s;
+            }
+            &:nth-child(2){
+                top: 10px;
+                height: 1.5px;
+            }
+            &:last-child{
+                top: 20px;
+            }
+        }
+    }
+    nav.menu{
+        width: 100vw;
+        height: calc(100vh - 60px);
+        position: fixed;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease;
+        background-color: $color_purple;
+        top: 60px;
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                margin-bottom: 30px;
+                transition: transform 1s,opacity .8s;
+                a{
+                    background: #fff;
+                    display: block;
+                    padding: 100px 40px 30px;
+                    width: 302px;
+                    height: 234px;
+                    text-decoration: none;
+                    position: relative;
+                    .name{
+                        font-size: 40px;
+                        color: #2d0c4e;
+                        display: block;
+                    }
+                    .nav-desc{
+                        color: #2d0c4e;
+                        display: block;
+                        text-transform: uppercase;
+                        position: relative;
+                        padding-left: 35px;
+                        margin-bottom: 24px;
+                        color: #2d0c4e;
+                        &:before {
+                            background: url(../../img/right-arrow.png) no-repeat;
+                            width: 31px;
+                            height: 20px;
+                            content: "";
+                            position: absolute;
+                            top: -3px;
+                            left: 0;
+                            transition: .5s ease-in;
+                        }
+                    }
+                    .nav-line{
+                        position: absolute;
+                        background-color: $color_orange ;
+                    }
+                    .nav-line-1, .nav-line-3{
+                        height: 15px;
+                        width: 0;
+                        right: 0;
+                        transition: width .175s linear;
+                    }
+                    .nav-line-2, .nav-line-4{
+                        height: 0;
+                        width: 15px;
+                        bottom: 0;
+                        transition: height .175s linear;
+                    }
+                    .nav-line-1, .nav-line-4{
+                        transition-delay: .175s;
+                    }
+                    .nav-line-3, .nav-line-2{
+                        transition-delay: .35s;
+                    }
+                    .nav-line-1{
+                        top: 0;
+                    }
+                    .nav-line-3{
+                        bottom: 0;
+                    }
+                    
+                    .nav-line-2{
+                        right: 0;
+                    }
+                    
+                    .nav-line-4{
+                        left: 0;
+                    }
+                    &:hover{
+                        .nav-line-1, .nav-line-4{
+                            transition-delay: .35s;
+                        }
+                        .nav-line-1, .nav-line-3{
+                            width: 100%;
+                        }
+                        .nav-line-2, .nav-line-3{
+                            transition-delay: .175s;
+                        }
+                        .nav-line-2, .nav-line-4{
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            li.top-left{
+                float: left;
+                transform: translateY(-50vh);
+                
+            }
+            li.bottom-left{
+                float: left;
+                clear: left;
+                transform: translateX(-50vw);
+                margin: 0;
+                a{
+                    padding: 160px 40px 30px;
+                    height: 294px;
+                }
+                
+            }
+            li.top-right{
+                float: right;
+                transform: translateY(-70vh);
+                a{
+                    padding: 160px 40px 30px;
+                    height: 294px;
+                }
+            }
+            li.bottom-right{
+                float: right;
+                clear: right;
+                transform: translateX(50vw);
+                margin: 0;
+                
+            }
+            li.center{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 60vh) rotate(-90deg);
+            }
+            li.clear{
+                clear: both;
+            }
+        }
+    }
+    nav.menu.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+header.active{
+    background-color: $color_purple;
+    .logo{
+        img{
+            filter: brightness(0%) invert(1);
+        }
+    }
+    ul{
+        li{
+            transform: translate3d(0, 0, 0) !important;
+        }
+        li.center{
+            transform: translate(-50%, -50%) rotate(-90deg) !important;
+        }
+    }
+    .menu-bar{
+        span{
+            background-color: white;
+            &:nth-child(2){
+                transition: transform .25s .15s ease-in;
+                transform: rotate3d(0,0,1,135deg);
+            }
+            &:first-child, &:last-child{
+                transition: top .15s ease-in,transform .25s .15s ease-in;
+                transform: rotate3d(0,0,1,45deg);
+                top: 10px;
+                height: 1.5px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+    nav.menu .container {
+        max-width: 920px;
+    }
+}
