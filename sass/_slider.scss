@@ -1,0 +1,145 @@
+#slider{
+    margin-top: 60px;
+    .owl-dots{
+        margin: 0;
+        position: absolute;
+        bottom: 50px;
+        left: 100px;
+        button{
+            outline: none;
+            padding: 4px !important;
+            margin: 4px;
+            border-radius: 100%;
+            border: 1px solid transparent;
+            transition: all .2s ease;
+            span{
+                color: rgba($color_orange, $alpha: .4);
+                margin: 0;
+                transition: all .2s ease;
+                position: relative;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                background-color: transparent !important;
+                font-size: 7px;
+                &::before{
+                    content: "\f111";
+                }
+            }
+            &:hover{
+                border-color: $color_purple;
+                span{
+                    color: $color_orange;
+                }
+            }
+        }
+        button.active{
+            border-color: $color_purple;
+            span{
+                color: $color_orange;
+            }
+        }
+    }
+    .two-side-wrapper{
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+    }
+    .slider-left-side-wrapper{
+        transform: skew(10deg);
+        transform-origin: 0 100%;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 78%;
+        .left-side{
+            transform: skew(-10deg);
+            transform-origin: 100% 100%;
+            .slider-item{
+                height: 600px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                .content{
+                    position: absolute;
+                    width: 60%;
+                    top: 50%;
+                    left: 70px;
+                    transform: translateY(-50%);
+                    h1{
+                        font-size: 70px;
+                        font-weight: bold;
+                        span{
+                            position: relative;
+                            &::before{
+                                position: absolute;
+                                content: '';
+                                background-color: $color_orange;
+                                height: 10px;
+                                left: 0;
+                                right: 0;
+                                bottom: 14px;
+                                z-index: -1;
+                            }
+                        }
+                    }
+                    p{
+                        font-size: 20px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .slider-right-side-aside{
+        transform: skew(10deg);
+        transform-origin: 100% 0%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 27%;
+        overflow: hidden;
+        .right-side-item{
+            transform: skew(-10deg);
+            transform-origin: 0 0;
+            margin-bottom: 32px;
+            height: 178px;
+            line-height: 178px;
+            font-size: 23px;
+            cursor: pointer;
+            overflow: hidden;
+            p{
+                margin: 0;
+                transition: transform 0.35s;
+                transform: scale3d(0.9, 0.9, 0.9);
+                font-size: 36px;
+                font-weight: bold;
+                padding-left: 70px;
+            }
+            img{
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.4s, transform 0.35s;
+            }
+            &:hover{
+                img{
+                    transform: scale3d(1.05, 1.05, 1);
+                }
+                p{
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1600px){
+    #slider .slider-left-side-wrapper{
+        width: 76%;
+    }
+}

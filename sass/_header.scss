@@ -1,6 +1,12 @@
 header{
     padding: 10px 0;
     transition: all .5s ease;
+    box-shadow: 0 2px 2px #0000001a;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    top: 0;
     .logo{
         img{
             height: 40px;
@@ -85,14 +91,14 @@ header{
                         background-color: $color_orange ;
                     }
                     .nav-line-1, .nav-line-3{
-                        height: 15px;
+                        height: 10px;
                         width: 0;
                         right: 0;
                         transition: width .175s linear;
                     }
                     .nav-line-2, .nav-line-4{
                         height: 0;
-                        width: 15px;
+                        width: 10px;
                         bottom: 0;
                         transition: height .175s linear;
                     }
