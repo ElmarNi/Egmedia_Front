@@ -39,6 +39,7 @@ header{
         }
     }
     nav.menu{
+        overflow-y: auto;
         width: 100vw;
         height: calc(100vh - 60px);
         position: fixed;

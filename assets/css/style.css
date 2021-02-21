@@ -47,6 +47,7 @@ header .menu-bar span:last-child {
   top: 20px;
 }
 header nav.menu {
+  overflow-y: auto;
   width: 100vw;
   height: calc(100vh - 60px);
   position: fixed;
@@ -319,7 +320,7 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
 }
 #slider .slider-left-side-wrapper .left-side .slider-item .content {
   position: absolute;
-  width: 60%;
+  width: 70%;
   top: 50%;
   left: 70px;
   -webkit-transform: translateY(-50%);
