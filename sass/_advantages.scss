@@ -1,0 +1,79 @@
+#advantages{
+    .slide-wrapper{
+        position: relative;
+        height: 400px;
+        .slide{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.85);
+            border-radius: 100%;
+            background-position: center;
+            background-size: cover;
+            transition: all .55s ease-in-out;
+            box-shadow: -20px 16px 20px 0px #39393936;
+            opacity: 0;
+            visibility: hidden;
+            &::before{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                content: "";
+                background-color: #0000004d;
+                border-radius: 100%;
+            }
+            a{
+                display: block;
+                width: 400px;
+                height: 400px;
+                .content{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0.8);
+                    width: 100%;
+                    transition: all .5s .4s;
+                    h1{
+                        margin: 0;
+                        text-align: center;
+                        font-size: 50px;
+                        color: white;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .slide.active{
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            visibility: visible;
+            a{
+                .content{
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+    }
+    .prev, .next{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 60px;
+        cursor: pointer;
+        z-index: 2;
+        span{
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-weight: 700;
+        }
+    }
+    .prev{
+        left: 20px;
+    }
+    .next{
+        right: 20px;
+    }
+}

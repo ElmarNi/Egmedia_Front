@@ -57,6 +57,7 @@ header nav.menu {
   transition: all .5s ease;
   background-color: #a53692;
   top: 60px;
+  padding: 30px 0;
 }
 header nav.menu ul {
   list-style: none;
@@ -409,4 +410,88 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
   #slider .slider-left-side-wrapper {
     width: 76%;
   }
+}
+#advantages .slide-wrapper {
+  position: relative;
+  height: 400px;
+}
+#advantages .slide-wrapper .slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.85);
+          transform: translate(-50%, -50%) scale(0.85);
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all .55s ease-in-out;
+  transition: all .55s ease-in-out;
+  -webkit-box-shadow: -20px 16px 20px 0px #39393936;
+          box-shadow: -20px 16px 20px 0px #39393936;
+  opacity: 0;
+  visibility: hidden;
+}
+#advantages .slide-wrapper .slide::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  background-color: #0000004d;
+  border-radius: 100%;
+}
+#advantages .slide-wrapper .slide a {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+#advantages .slide-wrapper .slide a .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+  width: 100%;
+  -webkit-transition: all .5s .4s;
+  transition: all .5s .4s;
+}
+#advantages .slide-wrapper .slide a .content h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+}
+#advantages .slide-wrapper .slide.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+#advantages .slide-wrapper .slide.active a .content {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+#advantages .prev, #advantages .next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 60px;
+  cursor: pointer;
+  z-index: 2;
+}
+#advantages .prev span, #advantages .next span {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-weight: 700;
+}
+#advantages .prev {
+  left: 20px;
+}
+#advantages .next {
+  right: 20px;
 }
