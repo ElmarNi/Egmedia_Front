@@ -4,6 +4,25 @@ $color_orange: #f5874f;
 body{
   font-family: 'Josefin Sans', sans-serif;
 }
+.row.heading{
+  h1{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 12px;
+      left: 2px;
+      height: 8px;
+      width: 46%;
+      background-color: $color_orange;
+      z-index: -1;
+    }
+  }
+}
 @import "header";
 @import "slider";
 @import "advantages"

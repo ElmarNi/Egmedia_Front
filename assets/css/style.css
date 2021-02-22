@@ -2,6 +2,24 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+.row.heading h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+.row.heading h1::before {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: 2px;
+  height: 8px;
+  width: 46%;
+  background-color: #f5874f;
+  z-index: -1;
+}
+
 header {
   padding: 10px 0;
   -webkit-transition: all .5s ease;
@@ -411,6 +429,14 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
     width: 76%;
   }
 }
+#advantages {
+  padding: 60px 0;
+  height: 800px;
+  overflow: hidden;
+}
+#advantages .row.heading h1 {
+  margin-bottom: 140px;
+}
 #advantages .slide-wrapper {
   position: relative;
   height: 400px;
@@ -440,6 +466,7 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
   content: "";
   background-color: #0000004d;
   border-radius: 100%;
+  z-index: -1;
 }
 #advantages .slide-wrapper .slide a {
   display: block;
@@ -462,6 +489,11 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
   font-size: 50px;
   color: white;
   font-weight: bold;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#advantages .slide-wrapper .slide a:hover .content h1 {
+  color: #f5874f;
 }
 #advantages .slide-wrapper .slide.active {
   -webkit-transform: translate(-50%, -50%) scale(1);
@@ -488,10 +520,120 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
           writing-mode: vertical-rl;
   text-orientation: upright;
   font-weight: 700;
+  user-select: none;
+  /* standard syntax */
+  -webkit-user-select: none;
+  /* webkit (safari, chrome) browsers */
+  -moz-user-select: none;
+  /* mozilla browsers */
+  -khtml-user-select: none;
+  /* webkit (konqueror) browsers */
+  -ms-user-select: none;
+  /* IE10+ */
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#advantages .prev span:hover, #advantages .next span:hover {
+  color: #a53692;
 }
 #advantages .prev {
   left: 20px;
 }
 #advantages .next {
   right: 20px;
+}
+#advantages .pagination {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 9;
+  width: 570px;
+  height: 570px;
+  border-radius: 50%;
+  border: 3px solid #7b1469;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#advantages .pagination .item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#advantages .pagination .item .dot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 13%;
+  width: 13%;
+  border-radius: 50%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background-color: #7b1469;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+#advantages .pagination .item .dot:hover {
+  background-color: #cb21ad;
+  -webkit-transform: translate(-50%, -50%) scale(1.105);
+          transform: translate(-50%, -50%) scale(1.105);
+}
+#advantages .pagination .item .dot::before, #advantages .pagination .item .dot::after {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+#advantages .pagination .item .dot::before {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  top: -50%;
+  right: 140%;
+  width: 30%;
+  height: 30%;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  border: 6px solid #F48E2A;
+  z-index: -1;
+}
+#advantages .pagination .item .dot::after {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  top: 100%;
+  left: 130%;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  border: 10px solid #FE9290;
+  z-index: 5;
+}
+#advantages .pagination .item.active .dot {
+  background-color: #cb21ad;
+}
+#advantages .pagination .item.active .dot::before, #advantages .pagination .item.active .dot::after {
+  opacity: 0.6;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
 }

@@ -24,17 +24,61 @@ $(document).ready(function () {
             })
         })
     })
-    // let advantages_slider_index = $("#advantages .slide-wrapper .slide").length
-    let advantages_slider_index = 0
     $("#advantages .next").click(function(){
-        if (advantages_slider_index < $("#advantages .slide-wrapper .slide").length) {
-            $("#advantages .slide-wrapper .slide.active").removeClass("active").next().addClass("active")
-        } else {
-            $($("#advantages .slide-wrapper .slide")[0]).addClass("active")
-        }       
-        advantages_slider_index++
-        if (advantages_slider_index == 5) {
-            advantages_slider_index = 0
+        let data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+
+        if (parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id")) == $("#advantages .slide-wrapper .slide").length) {
+            $("#advantages .slide-wrapper .slide.active").removeClass("active").parent().children().first().addClass("active")
+            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
         }
+        else{
+            $("#advantages .slide-wrapper .slide.active").removeClass("active").next().addClass("active")
+            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+        }
+        $("#advantages .pagination").css(
+            {
+                "transform": `translate(-50%, -50%) rotate(${-((data_id - 1) * 70)}deg)`
+            }
+        )
+        $(`#advantages .pagination .item.active`).removeClass("active")
+        $(`#advantages .pagination .item[data-id=${data_id}]`).addClass("active")
+    })
+    $("#advantages .prev").click(function(){
+        let data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+
+        if (parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id")) == 1) {
+            $("#advantages .slide-wrapper .slide.active").removeClass("active").parent().children().last().addClass("active")
+            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+
+        }
+        else{
+            $("#advantages .slide-wrapper .slide.active").removeClass("active").prev().addClass("active")
+            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+
+        }
+        $("#advantages .pagination").css(
+            {
+                "transform": `translate(-50%, -50%) rotate(${-((data_id - 1) * 70)}deg)`
+            }
+        )
+        $(`#advantages .pagination .item.active`).removeClass("active")
+        $(`#advantages .pagination .item[data-id=${data_id}]`).addClass("active")
+    })
+    $("#advantages .pagination .item").each(function (index, element) {
+        $(element).css("transform", `rotate(${(index) * 70}deg)`)
+    })
+    $("#advantages .pagination .item").click(function(){
+        let data_id = parseInt($(this).attr("data-id"))
+        let transform = 0
+        transform = transform - ((data_id - 1) * 70)
+        $("#advantages .pagination .item.active").removeClass("active")
+        $("#advantages .pagination").css(
+            {
+                "transform": `translate(-50%, -50%) rotate(${transform}deg)`
+            }
+        )
+        $(this).addClass("active")
+        $("#advantages .slide-wrapper .slide.active").removeClass("active")
+        $(`#advantages .slide-wrapper .slide[data-id=${data_id}]`).addClass("active")
     })
 });
