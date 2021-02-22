@@ -20,6 +20,7 @@
             box-shadow: -20px 16px 20px 0px #39393936;
             opacity: 0;
             visibility: hidden;
+            z-index: 1;
             &::before{
                 position: absolute;
                 top: 0;
@@ -105,7 +106,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 9;
         width: 570px;
         height: 570px;
         border-radius: 50%;
@@ -120,6 +120,7 @@
             border-radius: 50%;
             .dot{
                 display: flex;
+                z-index: 9;
                 align-items: center;
                 justify-content: center;
                 position: absolute;

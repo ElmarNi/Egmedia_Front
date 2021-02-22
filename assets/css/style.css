@@ -456,6 +456,7 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
           box-shadow: -20px 16px 20px 0px #39393936;
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
 }
 #advantages .slide-wrapper .slide::before {
   position: absolute;
@@ -548,7 +549,6 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 9;
   width: 570px;
   height: 570px;
   border-radius: 50%;
@@ -569,6 +569,7 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 9;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
