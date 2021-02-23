@@ -24,61 +24,88 @@ $(document).ready(function () {
             })
         })
     })
-    $("#advantages .next").click(function(){
-        let data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+    $("#services .next").click(function(){
+        let data_id = parseInt($("#services .slide-wrapper .slide.active").attr("data-id"))
 
-        if (parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id")) == $("#advantages .slide-wrapper .slide").length) {
-            $("#advantages .slide-wrapper .slide.active").removeClass("active").parent().children().first().addClass("active")
-            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+        if (parseInt($("#services .slide-wrapper .slide.active").attr("data-id")) == $("#services .slide-wrapper .slide").length) {
+            $("#services .slide-wrapper .slide.active").removeClass("active").parent().children().first().addClass("active")
+            data_id = parseInt($("#services .slide-wrapper .slide.active").attr("data-id"))
         }
         else{
-            $("#advantages .slide-wrapper .slide.active").removeClass("active").next().addClass("active")
-            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+            $("#services .slide-wrapper .slide.active").removeClass("active").next().addClass("active")
+            data_id = parseInt($("#services .slide-wrapper .slide.active").attr("data-id"))
         }
-        $("#advantages .pagination").css(
+        $("#services .pagination").css(
             {
                 "transform": `translate(-50%, -50%) rotate(${-((data_id - 1) * 70)}deg)`
             }
         )
-        $(`#advantages .pagination .item.active`).removeClass("active")
-        $(`#advantages .pagination .item[data-id=${data_id}]`).addClass("active")
+        $(`#services .pagination .item.active`).removeClass("active")
+        $(`#services .pagination .item[data-id=${data_id}]`).addClass("active")
     })
-    $("#advantages .prev").click(function(){
-        let data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+    $("#services .prev").click(function(){
+        let data_id = parseInt($("#services .slide-wrapper .slide.active").attr("data-id"))
 
-        if (parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id")) == 1) {
-            $("#advantages .slide-wrapper .slide.active").removeClass("active").parent().children().last().addClass("active")
-            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+        if (parseInt($("#services .slide-wrapper .slide.active").attr("data-id")) == 1) {
+            $("#services .slide-wrapper .slide.active").removeClass("active").parent().children().last().addClass("active")
+            data_id = parseInt($("#services .slide-wrapper .slide.active").attr("data-id"))
 
         }
         else{
-            $("#advantages .slide-wrapper .slide.active").removeClass("active").prev().addClass("active")
-            data_id = parseInt($("#advantages .slide-wrapper .slide.active").attr("data-id"))
+            $("#services .slide-wrapper .slide.active").removeClass("active").prev().addClass("active")
+            data_id = parseInt($("#services .slide-wrapper .slide.active").attr("data-id"))
 
         }
-        $("#advantages .pagination").css(
+        $("#services .pagination").css(
             {
                 "transform": `translate(-50%, -50%) rotate(${-((data_id - 1) * 70)}deg)`
             }
         )
-        $(`#advantages .pagination .item.active`).removeClass("active")
-        $(`#advantages .pagination .item[data-id=${data_id}]`).addClass("active")
+        $(`#services .pagination .item.active`).removeClass("active")
+        $(`#services .pagination .item[data-id=${data_id}]`).addClass("active")
     })
-    $("#advantages .pagination .item").each(function (index, element) {
+    $("#services .pagination .item").each(function (index, element) {
         $(element).css("transform", `rotate(${(index) * 70}deg)`)
     })
-    $("#advantages .pagination .item").click(function(){
+    $("#services .pagination .item").click(function(){
         let data_id = parseInt($(this).attr("data-id"))
         let transform = 0
         transform = transform - ((data_id - 1) * 70)
-        $("#advantages .pagination .item.active").removeClass("active")
-        $("#advantages .pagination").css(
+        $("#services .pagination .item.active").removeClass("active")
+        $("#services .pagination").css(
             {
                 "transform": `translate(-50%, -50%) rotate(${transform}deg)`
             }
         )
         $(this).addClass("active")
-        $("#advantages .slide-wrapper .slide.active").removeClass("active")
-        $(`#advantages .slide-wrapper .slide[data-id=${data_id}]`).addClass("active")
+        $("#services .slide-wrapper .slide.active").removeClass("active")
+        $(`#services .slide-wrapper .slide[data-id=${data_id}]`).addClass("active")
     })
+    var $grid = $('#portfolio .filtered-items').isotope({
+        itemSelector: '.filter-item',
+        layoutMode: 'fitRows'
+    });
+    // filter functions
+    var filterFns = {
+        // show if number is greater than 50
+        numberGreaterThan50: function() {
+        var number = $(this).find('.number').text();
+        return parseInt( number, 10 ) > 50;
+        },
+        // show if name ends with -ium
+        ium: function() {
+        var name = $(this).find('.name').text();
+        return name.match( /ium$/ );
+        }
+    };
+    // bind filter button click
+    $('#portfolio .category-names').on( 'click', 'a', function(e) {
+        e.preventDefault()
+        var filterValue = $( this ).attr('data-filter');
+        // use filterFn if matches value
+        filterValue = filterFns[ filterValue ] || filterValue;
+        $grid.isotope({ filter: filterValue });
+        $('#portfolio .category-names a.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+    });
 });

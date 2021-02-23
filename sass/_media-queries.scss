@@ -1,0 +1,257 @@
+@media (max-width: 1229px){
+  #slider{
+    .slider-left-side-wrapper{
+      width: 81%;
+      transform-origin: 0 102%;
+      .left-side{
+      font-size: 53px;
+        .slider-item{
+          .content{
+            h1{
+              font-size: 53px;
+              span::before{
+                bottom: 9px;
+              }
+            }
+            p{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    .slider-right-side-aside{
+      .right-side-item{
+        p{
+          font-size: 24px;
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px){
+  #slider{
+    .two-side-wrapper{
+      height: 400px;
+    }
+    .slider-left-side-wrapper{
+      width: 79%;
+      .left-side{
+        .slider-item{
+          height: 400px;
+          .content{
+            h1{
+              font-size: 42px;
+            }
+            p{
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    .slider-right-side-aside{
+      .right-side-item{
+        height: 112px;
+        line-height: 112px;
+        p{
+          padding-left: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  #services{
+    .next{
+      right: -20px;
+    }
+    .prev{
+      left: -20px;
+    }
+  }
+  header{
+    nav.menu{
+      ul{
+        li{
+          a{
+            padding: 40px 20px 30px;
+            height: 140px;
+            width: 262px;
+          }
+        }
+        li.top-right a, li.bottom-left a{
+          padding: 130px 20px 30px;
+          height: 234px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+
+  #slider{
+    .slider-left-side-wrapper{
+      width: 100%;
+      transform: skew(0deg);
+      .left-side{
+        transform: skew(0deg);
+        .slider-item{
+          .content{
+            p{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .slider-right-side-aside{
+      display: none;
+    }
+  }
+
+  #services{
+    height: 700px;
+    .prev, .next{
+      display: none;
+    }
+    .pagination{
+      height: 480px;
+      width: 480px;
+    }
+    .slide-wrapper{
+      .slide{
+        a{
+          width: 350px;
+          height: 350px;
+        }
+      }
+    }
+    .row.heading h1{
+      margin-bottom: 90px;
+    }
+  }
+  header{
+    nav.menu{
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li.center{
+          position: unset;
+          transform: translate(0, 60vh) rotate(0deg);
+          margin: 0;
+        }
+        li{
+          flex-basis: 50%;
+          margin: 0;
+          padding: 10px;
+          a{
+            .name{
+              font-size: 35px;
+            }
+          }
+        }
+        li.clear{
+          display: none;
+        }
+      }
+    }
+  }
+  header nav.menu ul li a, header nav.menu ul li.top-right a, header nav.menu ul li.bottom-left a {
+    padding: 40px 20px 30px;
+    height: 140px;
+    width: 100%;
+  }
+  header.active ul li.center{
+    transform: translate(0, 0) rotate(0deg) !important;
+  }
+  header li.bottom-right{
+    margin-bottom: 30px !important;
+  }
+  #portfolio{
+    .item{
+      .image-wrapper{
+        img{
+          height: 190px;
+        }
+      }
+      .content{
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+    }
+  }
+}
+@media (max-width: 576px){
+  #portfolio {
+    .item{
+      margin-top: 15px;
+    }
+  }
+  header{
+    nav.menu{
+      ul{
+        li{
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  #slider{
+    .owl-dots{
+      bottom: 20px;
+      left: 70px;
+    }
+    .two-side-wrapper{
+      height: 280px;
+    }
+    .slider-left-side-wrapper .left-side .slider-item .content{
+      left: 50px;
+      h1{
+        font-size: 23px;
+        span::before{
+          height: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+    .slider-left-side-wrapper .left-side .slider-item{
+      height: 280px;
+    }
+  }
+
+  #services{
+    height: 470px;
+    padding: 40px 0;
+    .slide-wrapper{
+      height: 340px;
+      .slide{
+        a{
+          width: 170px;
+          height: 170px;
+          .content h1{
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    .pagination{
+      width: 320px;
+      height: 320px;
+      .item{
+        .dot{
+          font-size: 12px;
+          width: 20%;
+          height: 20%;
+        }
+      }
+    }
+  }
+  #services .row.heading h1{
+    margin-bottom: 20px;
+  }
+}
