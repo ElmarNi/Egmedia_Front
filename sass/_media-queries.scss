@@ -198,6 +198,20 @@
     top: 100%;
     transform: translate(-50%, -50%);
   }
+  #get-price-offer{
+    padding-bottom: 0;
+  }
+  .row.heading h1{
+    margin-bottom: 10px;
+    font-size: 26px;
+    &::before{
+      bottom: 8px;
+      height: 5px;
+    }
+  }
+  #portfolio ul li a{
+    font-size: 14px;
+  }
 }
 @media (max-width: 576px){
   #portfolio {
