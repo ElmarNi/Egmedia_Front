@@ -29,6 +29,9 @@
       }
     }
   }
+  #portfolio{
+    padding-bottom: 0;
+  }
 }
 @media (max-width: 991px){
   #slider{
@@ -253,5 +256,44 @@
   }
   #services .row.heading h1{
     margin-bottom: 20px;
+  }
+  footer{
+    .top{
+      .menu{
+        ul{
+          li{
+            a{
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    .bottom{
+      .contact-infos{
+        ul{
+          li{
+            font-size: 13px;
+            text-align: center;
+            &:first-child{
+              margin-bottom: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #advantages{
+   .item{
+     .icon-wrapper{
+       height: 60px;
+       width: 60px;
+       line-height: 69px;
+       font-size: 18px;
+     }
+     h4{
+       font-size: 13px;
+     }
+    }
   }
 }

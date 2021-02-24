@@ -1,0 +1,99 @@
+footer{
+    .top{
+        padding: 40px 0;
+        border-bottom: 1px solid #ececee;
+        .logo{
+            img{
+                height: 40px;
+            }
+        }
+        .menu{
+            ul{
+                list-style: none;
+                li{
+                    a{
+                        padding: 4px 10px;
+                        color: black;
+                        transition: all .3s ease;
+                        &:hover{
+                            text-decoration: none;
+                            color: $color_orange;
+                        }
+                    }
+                }
+            }
+        }
+        .social-icons{
+            ul{
+                list-style: none;
+                li{
+                    a{
+                        padding: 10px;
+                        display: block;
+                        font-size: 18px;
+                        color: $color_orange;
+                        transition: all .3s ease;
+                        &:hover{
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        padding: 20px 0;
+        .left{
+            .orange{
+                color: $color_orange;
+            }
+            .purple{
+                color: $color_purple;
+            }
+        }
+        .contact-infos{
+            ul{
+                list-style: none;
+                li{
+                    margin: 0 10px;
+                    padding: 0 10px;
+                    a{
+                        transition: all .3s ease;
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                    &:first-child{
+                        position: relative;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 1px;
+                            height: 32px;
+                            background: #ececee;
+                        }
+                        a{
+                            color: black;
+                            &:hover{
+                                color: $color_orange;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        margin: 0;
+                        padding: 0;
+                        a{
+                            color: $color_orange;
+                            &:hover{
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
