@@ -2,6 +2,12 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+body.active {
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
 .row.heading h1 {
   text-align: center;
   font-weight: bold;
@@ -66,15 +72,16 @@ header .menu-bar span:last-child {
 }
 header nav.menu {
   overflow-y: auto;
+  overflow-x: hidden;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 56px);
   position: fixed;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
   background-color: #a53692;
-  top: 59px;
+  top: 56px;
   padding: 30px 0;
 }
 header nav.menu ul {
@@ -118,7 +125,7 @@ header nav.menu ul li a .nav-desc:before {
   height: 20px;
   content: "";
   position: absolute;
-  top: -3px;
+  top: -4px;
   left: 0;
   -webkit-transition: .5s ease-in;
   transition: .5s ease-in;
@@ -1268,9 +1275,12 @@ footer .bottom .contact-infos ul li:last-child a:hover {
   }
 
   header nav.menu ul li a, header nav.menu ul li.top-right a, header nav.menu ul li.bottom-left a {
-    padding: 40px 20px 30px;
-    height: 140px;
+    padding: 20px 20px 10px;
+    height: auto;
     width: 100%;
+  }
+  header nav.menu ul li a .nav-desc, header nav.menu ul li.top-right a .nav-desc, header nav.menu ul li.bottom-left a .nav-desc {
+    margin: 0;
   }
 
   header.active ul li.center {
@@ -1291,15 +1301,40 @@ footer .bottom .contact-infos ul li:last-child a:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+
+  footer .bottom .contact-infos ul li:first-child::before {
+    right: auto;
+    height: 1px;
+    width: 102px;
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
 }
 @media (max-width: 576px) {
   #portfolio .item {
     margin-top: 15px;
   }
 
+  header nav.menu ul li a .nav-desc:before {
+    background-size: 16px;
+    top: -2px;
+  }
+
+  header nav.menu {
+    padding: 10px 0;
+  }
   header nav.menu ul li {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+  }
+  header nav.menu ul li a .name {
+    font-size: 24px;
+  }
+  header nav.menu ul li a .nav-desc {
+    font-size: 8px;
+    padding-left: 20px;
   }
 
   #slider .owl-dots {

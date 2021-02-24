@@ -163,9 +163,12 @@
     }
   }
   header nav.menu ul li a, header nav.menu ul li.top-right a, header nav.menu ul li.bottom-left a {
-    padding: 40px 20px 30px;
-    height: 140px;
+    padding: 20px 20px 10px;
+    height: auto;
     width: 100%;
+    .nav-desc{
+      margin: 0;
+    }
   }
   header.active ul li.center{
     transform: translate(0, 0) rotate(0deg) !important;
@@ -187,6 +190,14 @@
       }
     }
   }
+  footer .bottom .contact-infos ul li:first-child::before{
+    right: auto;
+    height: 1px;
+    width: 102px;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+  }
 }
 @media (max-width: 576px){
   #portfolio {
@@ -194,11 +205,25 @@
       margin-top: 15px;
     }
   }
+  header nav.menu ul li a .nav-desc:before{
+    background-size: 16px;
+    top: -2px;
+  }
   header{
     nav.menu{
+      padding: 10px 0;
       ul{
         li{
           flex-basis: 100%;
+          a{
+            .name{
+              font-size: 24px;
+            }
+            .nav-desc{
+              font-size: 8px;
+              padding-left: 20px;
+            }
+          }
         }
       }
     }
