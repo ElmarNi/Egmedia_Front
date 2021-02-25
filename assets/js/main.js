@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    setTimeout(() => {
+        $(".preloader").addClass("loaded")
+    }, 1500);
     $("header .menu-bar").click(function () {
         $("header nav.menu").toggleClass("active")
         $("header").toggleClass("active")
