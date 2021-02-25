@@ -1473,6 +1473,13 @@ footer .bottom .contact-infos ul li:last-child a:hover {
   margin-left: 56px;
 }
 
+#about-page {
+  padding-top: 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
 @media (max-width: 1229px) {
   #slider .slider-left-side-wrapper {
     width: 81%;
