@@ -5,15 +5,16 @@
         .icon-wrapper{
             height: 90px;
             width: 90px;
-            line-height: 99px;
             font-size: 28px;
             color: #fff;
-            text-align: center;
             border-radius: 50%;
             transition: all .3s ease;
             margin: 0 auto;
             margin-bottom: 15px;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &::before{
                 position: absolute;
                 content: '';

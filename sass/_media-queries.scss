@@ -33,6 +33,11 @@
     padding-bottom: 0;
   }
 }
+@media (max-width: 1200px){
+  #contact-page .infos{
+    left: 15px;
+  }
+}
 @media (max-width: 991px){
   #slider{
     .two-side-wrapper{
@@ -91,8 +96,13 @@
       }
     }
   }
+  #contact-page form input, #contact-page form textarea{
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+  #contact-page .infos .info a{}
 }
-@media (max-width: 768px){
+@media (max-width: 767px){
 
   #slider{
     .slider-left-side-wrapper{
@@ -212,6 +222,16 @@
   #portfolio ul li a{
     font-size: 14px;
   }
+  #contact-page .infos {
+    position: unset;
+    transform: translateY(0%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .info{
+      flex-basis: 50%;
+    }
+  }
 }
 @media (max-width: 576px){
   #portfolio {
@@ -327,12 +347,14 @@
      .icon-wrapper{
        height: 60px;
        width: 60px;
-       line-height: 69px;
        font-size: 18px;
      }
      h4{
        font-size: 13px;
      }
     }
+  }
+  #contact-page .infos .info{
+    flex-basis: 100%;
   }
 }

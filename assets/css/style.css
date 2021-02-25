@@ -993,16 +993,23 @@ header.active .menu-bar span:first-child, header.active .menu-bar span:last-chil
 #advantages .item .icon-wrapper {
   height: 90px;
   width: 90px;
-  line-height: 99px;
   font-size: 28px;
   color: #fff;
-  text-align: center;
   border-radius: 50%;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
   margin: 0 auto;
   margin-bottom: 15px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 #advantages .item .icon-wrapper::before {
   position: absolute;
@@ -1424,7 +1431,6 @@ footer .bottom .contact-infos ul li:last-child a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1460,8 +1466,11 @@ footer .bottom .contact-infos ul li:last-child a:hover {
 #contact-page .infos .info.mail a:hover {
   color: black;
 }
+#contact-page .infos .info.mail i {
+  margin-right: 15px;
+}
 #contact-page .infos .info.mail a:last-child {
-  margin-left: 61px;
+  margin-left: 56px;
 }
 
 @media (max-width: 1229px) {
@@ -1489,6 +1498,11 @@ footer .bottom .contact-infos ul li:last-child a:hover {
 
   #portfolio {
     padding-bottom: 0;
+  }
+}
+@media (max-width: 1200px) {
+  #contact-page .infos {
+    left: 15px;
   }
 }
 @media (max-width: 991px) {
@@ -1532,8 +1546,13 @@ footer .bottom .contact-infos ul li:last-child a:hover {
     padding: 130px 20px 30px;
     height: 234px;
   }
+
+  #contact-page form input, #contact-page form textarea {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #slider .slider-left-side-wrapper {
     width: 100%;
     -webkit-transform: skew(0deg);
@@ -1651,6 +1670,24 @@ footer .bottom .contact-infos ul li:last-child a:hover {
   #portfolio ul li a {
     font-size: 14px;
   }
+
+  #contact-page .infos {
+    position: unset;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #contact-page .infos .info {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 @media (max-width: 576px) {
   #portfolio .item {
@@ -1740,10 +1777,14 @@ footer .bottom .contact-infos ul li:last-child a:hover {
   #advantages .item .icon-wrapper {
     height: 60px;
     width: 60px;
-    line-height: 69px;
     font-size: 18px;
   }
   #advantages .item h4 {
     font-size: 13px;
+  }
+
+  #contact-page .infos .info {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }

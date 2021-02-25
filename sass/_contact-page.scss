@@ -51,7 +51,6 @@
         .info{
             display: flex;
             align-items: center;
-            margin-top: 20px;
             flex-wrap: wrap;
             i{
                 font-size: 30px;
@@ -83,8 +82,11 @@
                     color: black;
                 }
             }
+            i{
+                margin-right: 15px;
+            }
             a:last-child{
-                margin-left: 61px;
+                margin-left: 56px;
             }
         }
     }
