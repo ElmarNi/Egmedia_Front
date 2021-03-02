@@ -115,33 +115,38 @@ $(document).ready(function () {
     });
 
     function SetServiceContainerHeight(isResized) {
-        let offset = 0
-        if (window.innerWidth > 991) {
-            if (!isResized) {
-                offset = 240
+        if ($("#services-page .service-container .category-names").length != 0) {
+            let offset = 0
+            if (window.innerWidth > 991) {
+                if (!isResized) {
+                    offset = 240
+                }
+                else{
+                    offset = -30
+                }
+                $("#services-page .service-container").height($("#services-page .service-container .category-names")[0].offsetHeight + $("#services-page .service-container .category-content.active")[0].offsetHeight - offset)
             }
             else{
-                offset = -30
+                if (!isResized) {
+                    offset = 150
+                }
+                else{
+                    offset = -30
+                }
+                $("#services-page .service-container").height($("#services-page .service-container .category-names")[0].offsetHeight + $("#services-page .service-container .category-content.active")[0].offsetHeight - offset)
             }
-            $("#services-page .service-container").height($("#services-page .service-container .category-names")[0].offsetHeight + $("#services-page .service-container .category-content.active")[0].offsetHeight - offset)
-        }
-        else{
-            if (!isResized) {
-                offset = 150
-            }
-            else{
-                offset = -30
-            }
-            $("#services-page .service-container").height($("#services-page .service-container .category-names")[0].offsetHeight + $("#services-page .service-container .category-content.active")[0].offsetHeight - offset)
         }
     }
     SetServiceContainerHeight(false)
     $(window).resize(function () { 
         SetServiceContainerHeight(true)
     });
+    let image_height = $("#services-page .active .gallery-item img").outerHeight()
 
+    $(window).resize(function () { 
+        image_height = $("#services-page .active .gallery-item img").outerHeight()
+    });
     function Services_Page() {
-        let image_height = $("#services-page .active .gallery-item img").outerHeight()
         let gallery_wrappers = document.querySelectorAll('#services-page .gallery-wrapper')
         $("#services-page .row.active .gallery-wrapper .gallery-item").click(function () {
             //get clicked image src 
@@ -183,40 +188,14 @@ $(document).ready(function () {
             $(this).addClass("active")
         })
 
-        $("#services-page .row.active .next").click(function(){
-            $("#services-page .row.active .previous.active").removeClass("active")
-            let data_id = parseInt($("#services-page .row.active .gallery-wrapper .gallery-item.active").attr("data-id"))
-            if (data_id < 4) {
-                $('#services-page .row.active .gallery-wrapper .gallery').css("transform", `translate3d(0px, -${(data_id) * image_height}px, 0px)`)
-            }
-            if (data_id < 5) {
-                $("#services-page .row.active .gallery-wrapper .gallery-item.active").removeClass("active").next().addClass("active")
-                $(`#services-page .row.active .main-image img.active`).removeClass("active").next().addClass("active")
-            }
-            if (data_id == 4) {
-                $(this).addClass("active")
-            }
-
-        })
-        $("#services-page .row.active .previous").click(function(){
-            $("#services-page .row.active .next.active").removeClass("active")
-            let data_id = parseInt($("#services-page .row.active .gallery-wrapper .gallery-item.active").attr("data-id"))
-
-            if (data_id > 1) {
-                $('#services-page .row.active .gallery-wrapper .gallery').css("transform", `translate3d(0px, -${(data_id - 2) * image_height}px, 0px)`)
-            }
-            if (data_id > 0) {
-                $("#services-page .row.active .gallery-wrapper .gallery-item.active").removeClass("active").prev().addClass("active")
-                $(`#services-page .row.active .main-image img.active`).removeClass("active").prev().addClass("active")
-            }
-            if (data_id == 1) {
-                $(this).addClass("active")
-            }
-        })
-
         $(gallery_wrappers).each(function () {
             $(this).height(image_height * 3)
         })
+        $(window).resize(function () { 
+            $(gallery_wrappers).each(function () {
+                $(this).height(image_height * 3)
+            })
+        });
     }
 
     $("#services-page .category-names a").click(function (e) {
@@ -234,6 +213,36 @@ $(document).ready(function () {
         Services_Page()
     })
 
+    $("#services-page .next").click(function(){
+        $("#services-page .row.active .previous.active").removeClass("active")
+        let data_id = parseInt($("#services-page .row.active .gallery-wrapper .gallery-item.active").attr("data-id"))
+        if (data_id < 4) {
+            $('#services-page .row.active .gallery-wrapper .gallery').css("transform", `translate3d(0px, -${(data_id) * image_height}px, 0px)`)
+        }
+        if (data_id < 5) {
+            $("#services-page .row.active .gallery-wrapper .gallery-item.active").removeClass("active").next().addClass("active")
+            $(`#services-page .row.active .main-image img.active`).removeClass("active").next().addClass("active")
+        }
+        if (data_id == 4) {
+            $(this).addClass("active")
+        }
+
+    })
+    $("#services-page .previous").click(function(){
+        $("#services-page .row.active .next.active").removeClass("active")
+        let data_id = parseInt($("#services-page .row.active .gallery-wrapper .gallery-item.active").attr("data-id"))
+
+        if (data_id > 1) {
+            $('#services-page .row.active .gallery-wrapper .gallery').css("transform", `translate3d(0px, -${(data_id - 2) * image_height}px, 0px)`)
+        }
+        if (data_id > 0) {
+            $("#services-page .row.active .gallery-wrapper .gallery-item.active").removeClass("active").prev().addClass("active")
+            $(`#services-page .row.active .main-image img.active`).removeClass("active").prev().addClass("active")
+        }
+        if (data_id == 1) {
+            $(this).addClass("active")
+        }
+    })
 
     Services_Page();
 });
