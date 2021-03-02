@@ -1554,6 +1554,9 @@ footer .bottom .contact-infos ul li:last-child a:hover {
 #services-page .category-names {
   margin-bottom: 40px;
 }
+#services-page .service-container {
+  height: 427px;
+}
 #services-page ul {
   list-style: none;
   margin: 0;
@@ -1588,8 +1591,8 @@ footer .bottom .contact-infos ul li:last-child a:hover {
 #services-page .category-content {
   position: absolute;
   top: 60px;
-  left: 0;
-  right: 0;
+  left: 15px;
+  right: 15px;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all .3s ease;
@@ -1753,6 +1756,15 @@ footer .bottom .contact-infos ul li:last-child a:hover {
   }
 }
 @media (max-width: 991px) {
+  #services-page .service-container {
+    height: 655px;
+  }
+
+  #services-page .category-content .content p {
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
+
   #slider .two-side-wrapper {
     height: 400px;
   }
@@ -2099,5 +2111,9 @@ footer .bottom .contact-infos ul li:last-child a:hover {
     margin-top: 7px;
     font-size: 14px;
     text-align: justify;
+  }
+
+  #services-page .service-container {
+    height: 523px;
   }
 }

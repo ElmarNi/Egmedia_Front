@@ -39,6 +39,14 @@
   }
 }
 @media (max-width: 991px){
+  
+  #services-page .service-container {
+    height: 655px;
+  }
+  #services-page .category-content .content p{
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
   #slider{
     .two-side-wrapper{
       height: 400px;
@@ -408,5 +416,8 @@
     margin-top: 7px;
     font-size: 14px;
     text-align: justify;
+  }
+  #services-page .service-container {
+    height: 523px;
   }
 }
